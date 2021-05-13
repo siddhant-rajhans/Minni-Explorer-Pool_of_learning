@@ -1,0 +1,87 @@
+
+/* Create a sticky/fixed navbar */
+#navbar {
+    overflow: hidden;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 9px 1px; /* Large padding which will shrink on scroll (using JS) */
+    transition: padding 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: -webkit-sticky;
+    position: sticky; /* Sticky/fixed navbar */
+    top: 0; /* At the top */
+    width: 100%;
+    z-index: 2;
+}
+/* Style the navbar links */
+#navbar a {
+    color: black;
+    text-align: center;
+    padding: 5px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 6px;
+}
+#navbar-right a {
+    margin-right: 20px;
+}
+/* Style the logo */
+#navbar .logo {
+    display: inline-block;
+    text-align: center;
+}
+.align_items {
+    align-items: center;
+}
+/* Links on mouse-over */
+#navbar a:hover {
+    background-color: #ddd;
+}
+
+/* Style the active/current link */
+#navbar a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* Display some links to the right */
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 877px) {
+    #navbar {
+        flex-direction: column;
+    }
+    #navbar a {
+        display: block;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 580px) {
+    #navbar {
+        padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+    }
+}
+
+
+
+
+
+/* Container holding the image and the text */
+.img-cont {
+    position: relative;
+    overflow: hidden;
+    max-width: 300px;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
