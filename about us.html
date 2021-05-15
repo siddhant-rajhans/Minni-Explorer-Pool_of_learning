@@ -109,6 +109,60 @@
                 </p>
             </div>
         </div>
+        <div class="curriculum-container">
+            <div class="border-anim">
+                <div class="heading-c">
+                    <h2 class="heading-c-text">Curriculum</h2>
+                </div>
+                <p class="text-c">
+                    Our early years curriculum blends development and learning
+                    in a concentric circle making our methodology of teaching
+                    and learning in a simultaneous process.
+                </p>
+
+                <p class="text-c">
+                    Practice of documentation to continuously refine the quality
+                    of our curriculum .
+                </p>
+                <p class="text-c">
+                    Committed to providing innovatively and scientifically
+                    designed curriculum with researched based books, activities,
+                    theme based learning like animal themes, outing and
+                    exploring, seasons, transport themes, etc.
+                </p>
+                <p class="text-c">
+                    Committed to document the checklist of skill enhancement
+                    evaluation program (SEEP) of every child per month along
+                    with the parents.
+                </p>
+                <p class="text-c ul-text">
+                    Keeping in view the objectives of curiosity and potentiality
+                    of all our minnis, curriculum has been designed:
+                </p>
+                <ul>
+                    <li class="li">
+                        <p>
+                            To develop a sense of gratitude for community
+                            helpers
+                        </p>
+                    </li>
+                    <li class="li">
+                        <p>To give Wings to their creative expressions</p>
+                    </li>
+                    <li class="li"><p>To discover their talents</p></li>
+                    <li class="li"><p>To create positive energy</p></li>
+                    <li class="li">
+                        <p>To help them in their future endeavours</p>
+                    </li>
+                    <li class="li">
+                        <p>
+                            To provide a stimulating environment for their
+                            emotional,social and intellectual development
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!-- Footer -->
         <footer class="bg-light text-center text-white">
             <!-- Grid container -->
@@ -282,6 +336,23 @@
                 ).innerHTML = `${Text} <br /> ${Text1}`;
                 document.getElementById("text1").innerHTML = Text2;
             }
+            function toggleAnim(ele, i) {
+                setTimeout(() => {
+                    ele.classList.add("anim");
+                }, 2000 * i);
+                setTimeout(() => {
+                    ele.classList.remove("anim");
+                }, 2000 * i + 2000);
+                setTimeout(() => {
+                    liAnim();
+                }, 12500);
+            }
+            function liAnim() {
+                document.querySelectorAll(".li").forEach((ele, index) => {
+                    toggleAnim(ele, index);
+                });
+            }
+            liAnim();
         </script>
     </body>
 </html>
