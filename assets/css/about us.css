@@ -155,6 +155,11 @@
 #text1 {
     margin: 0 10vh;
 }
+br {
+    display: block;
+    content: "";
+    margin-top: 10px;
+}
 @media screen and (max-width: 1281px) {
     .card-container {
         width: 100%;
