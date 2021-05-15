@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 
+=======
+img {
+    width: 100%;
+}
+.row {
+    padding: 0;
+    margin: 0;
+}
+>>>>>>> refs/remotes/origin/master
 /* Create a sticky/fixed navbar */
 #navbar {
     overflow: hidden;
@@ -64,19 +74,30 @@
     }
 }
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> refs/remotes/origin/master
 /* Container holding the image and the text */
 .img-cont {
     position: relative;
     overflow: hidden;
+<<<<<<< HEAD
     max-width: 1250px;
   }
   
   /* Bottom right text */
   .text-block {
+=======
+    max-width: 300px;
+}
+
+/* Bottom right text */
+.text-block {
+>>>>>>> refs/remotes/origin/master
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -84,6 +105,7 @@
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+<<<<<<< HEAD
   }
 
 
@@ -108,3 +130,57 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
   }
+=======
+}
+/* ####################################### gallery ############################################ */
+.grid-container {
+    --coulmbs: 3;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(var(--coulmbs), minmax(0, 1fr));
+}
+.images {
+    display: grid;
+    align-content: flex-start;
+    grid-gap: 20px;
+    grid-template-columns: minmax(0, 1fr);
+}
+.image {
+    filter: grayscale(1);
+    transition: all 500ms;
+    position: relative;
+}
+.image::before {
+    content: "";
+    width: 110%;
+    height: 100%;
+    transform: scaley(0);
+    transition: all 500ms;
+    top: 0%;
+    left: -5%;
+    position: absolute;
+    border-top: solid 2px #fff;
+    border-bottom: solid 2px #fff;
+}
+.image::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    transform: scalex(0);
+    transition: all 500ms;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    border-left: solid 2px #fff;
+    border-right: solid 2px #fff;
+}
+.image:hover {
+    filter: grayscale(0);
+}
+.image:hover::after {
+    transform: scalex(0.9);
+}
+.image:hover::before {
+    transform: scaley(0.9);
+}
+>>>>>>> refs/remotes/origin/master
