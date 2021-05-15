@@ -5,7 +5,6 @@
 
 .about-container {
     text-align: center;
-    margin-top: 50px;
     padding: 10px 20px;
     background-color: transparent;
     color: rgb(0, 0, 0);
@@ -148,10 +147,13 @@
 }
 .card-change-text {
     padding: 20px 0;
-    transform: translatex(calc(-70% + var(--x) / 10));
+    transform: translatex(calc(-60% + var(--x) / 10));
 }
-footer {
-    margin-top: 500px;
+#text {
+    font-size: 20px;
+}
+#text1 {
+    margin: 0 10vh;
 }
 @media screen and (max-width: 1281px) {
     .card-container {
@@ -159,6 +161,9 @@ footer {
     }
 }
 @media screen and (max-width: 1100px) {
+    #heading {
+        font-size: 25px;
+    }
     .card-txt {
         font-size: 20px;
         padding-bottom: 10px;
@@ -181,6 +186,9 @@ footer {
     .card-icon {
         font-size: 40px;
         width: 50px;
+    }
+    #text1 {
+        margin: 0 5vh;
     }
 }
 @media screen and (max-width: 818px) {
@@ -213,6 +221,9 @@ footer {
     .card-txt::after {
         border-bottom-width: 2px;
     }
+    #text1 {
+        margin: 0 0vh;
+    }
 }
 @media screen and (max-width: 552px) {
     .card-txt {
@@ -228,6 +239,16 @@ footer {
         width: 30px;
         left: calc(50% - 15px);
     }
+    #heading,
+    .about-heading {
+        font-size: 18px;
+    }
+    #text {
+        font-size: 14px;
+    }
+    #text1 {
+        font-size: 12px;
+    }
 }
 @media screen and (max-width: 422px) {
     .card-txt {
@@ -237,5 +258,15 @@ footer {
 @media screen and (max-width: 362px) {
     .card {
         padding: 0;
+    }
+    #heading,
+    .about-heading {
+        font-size: 14px;
+    }
+    #text {
+        font-size: 11px;
+    }
+    #text1 {
+        font-size: 9px;
     }
 }

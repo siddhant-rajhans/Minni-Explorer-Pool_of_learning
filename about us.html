@@ -12,7 +12,6 @@
         />
         <!-- Font awsome icons-->
         <link rel="stylesheet" href="./assets/css/style.css" />
-        <script src="/assets/js/main.js"></script>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -31,17 +30,26 @@
         <!-- Just an image -->
 
         <div id="navbar">
-            <div class="logo">
-                <img src="/images/Minni-Explorer-Gif-icon.gif" />
+            <div class="nav">
+                <div class="logo">
+                    <img src="/images/Minni-Explorer-Gif-icon.gif" />
+                </div>
+                <div id="navbar-right" class="align_items hide">
+                    <a class="active" href="#home"
+                        ><i class="fa fa-fw fa-home"></i>Home</a
+                    >
+                    <a href="/Gallery.html"
+                        ><i class="fa fa-fw fa-envelope"></i>Gallery</a
+                    >
+                    <a href="/about us.html"
+                        ><i class="fa fa-fw fa-search"></i>About</a
+                    >
+                </div>
             </div>
-            <div id="navbar-right" class="align_items">
-                <a href="/index.html"><i class="fa fa-fw fa-home"></i>Home</a>
-                <a href="/Gallery.html"
-                    ><i class="fa fa-fw fa-envelope"></i>Gallery</a
-                >
-                <a class="active" href="/about us.html"
-                    ><i class="fa fa-fw fa-search"></i>About</a
-                >
+            <div class="container-ham hide" id="ham" onclick="Hambar(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </div>
         </div>
         <div class="about-container">
@@ -66,7 +74,6 @@
                     <i class="fas fa-user-friends"></i>
                 </div>
                 <p class="card-txt">Founders Message</p>
-                >
             </div>
             <div class="card col blue">
                 <div class="card-icon">
@@ -83,15 +90,13 @@
         </div>
         <div class="about-container" id="card-text">
             <div class="card-change-text" id="card-change-text">
-                <h2 class="about-heading">Welcome to ME</h2>
-
-                <p class="about-text"></p>
-                <p class="about-text">
+                <h2 class="about-heading" id="heading">Welcome to ME</h2>
+                <p class="about-text" id="text">
                     Preschool - A POOL OF LEARNING
                     <br />
                     Daycare - a home away from home
                 </p>
-                <p class="about-text">
+                <p class="about-text" id="text1">
                     Dear all We believe that a good preschool is one that blunts
                     weaknesses and provides a stimulating environment for
                     Social, emotional and intellectual development of a child
@@ -177,12 +182,101 @@
         <script>
             const position = document.getElementById("card-change-text");
             window.onscroll = () => {
-                if (window.scrollY > 600 && window.scrollY < 850) {
-                    position.style.setProperty("--x", 700 + "%");
+                if (window.scrollY > 80) {
+                    document.getElementById("ham").style.marginTop = "42.5px";
+                    document.querySelector(".logo").classList.add("logosmall");
+                    document
+                        .getElementById("navbar")
+                        .classList.add("smallheight");
+                    document
+                        .getElementById("navbar")
+                        .classList.add("smallmine");
+                } else if (window.scrollY == 0) {
+                    document
+                        .querySelector(".logo")
+                        .classList.remove("logosmall");
+                    document.getElementById("ham").style.marginTop = "62.5px";
+                    document
+                        .getElementById("navbar")
+                        .classList.remove("smallmine");
+                    document
+                        .getElementById("navbar")
+                        .classList.remove("smallheight");
+                }
+                if (window.scrollY > 400 && window.scrollY < 700) {
+                    position.style.setProperty("--x", 600 + "%");
                 } else {
                     position.style.setProperty("--x", window.scrollY + "%");
                 }
+            }; // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+            window.onload = function () {
+                if (window.innerWidth <= 877) {
+                    document.getElementById("ham").classList.remove("hide");
+                } else {
+                    document
+                        .getElementById("navbar-right")
+                        .classList.remove("hide");
+                }
             };
+            function Hambar(ham) {
+                ham.classList.toggle("change");
+                document
+                    .getElementById("navbar-right")
+                    .classList.toggle("hide");
+                document.getElementById("navbar").classList.toggle("height");
+            }
+            document.querySelectorAll(".card").forEach((element, index) => {
+                element.addEventListener("click", () => {
+                    changetext(index);
+                });
+            });
+            function changetext(color) {
+                let heading = "";
+                let Text = "";
+                let Text1 = "";
+                let Text2 = "";
+                if (color == 0) {
+                    heading = `Welcome to ME`;
+                    Text = "Preschool - A POOL OF LEARNING";
+                    Text1 = "Daycare - a home away from home";
+                    Text2 = `Dear all We believe that a good preschool is one that blunts
+                                weaknesses and provides a stimulating environment for
+                                Social, emotional and intellectual development of a child
+                                and prepares them well with all requisite concepts and
+                                skills necessary for the next step of learning. ME is very
+                                unique and special in its own way of imparting early
+                                childhood education programs .I along with my team would be
+                                delighted to welcome you for a visit to the dynamic and
+                                energetic learning environment of our school.`;
+                    document.getElementById("text1").style.textAlign = "center";
+                } else if (color == 2) {
+                    heading = `Culture and values`;
+                    Text =
+                        "We stand to maintain a culture for all kids a sense of belonging and safe feelings.";
+                    Text1 = "";
+                    Text2 = `➢	Value diversity and beliefs as every child is unique in his/her own perspectives, ideas, knowledge and culture and that proves to be a great strength to our social environment.<br />
+➢	Respecting the environment in which we  exist -: the people, the place, the culture and tradition.<br />
+➢	Based upon the basic values of society which gives an image to the child to build foundations for life. 
+.`;
+                    document.getElementById("text1").style.textAlign = "left";
+                } else if (color == 1) {
+                    heading = `OUR OBJECTIVES `;
+                    Text =
+                        "We build our practice from our mission and goals for :-";
+                    Text1 = "";
+                    Text2 = `●	Launching our foundation for tomorrow.<br />
+                                 ●	To provide ample opportunities to various kinds of activities and simply be at themselves in action, skills and conscious thoughts as we strongly believe that natural growth occurs when children have lots of fun.<br />
+                                 ●	Developing interest and knowledge through ‘learning by doing’ technique with our scientifically designed beyond the curriculum methodology.<br />
+                                 ●	Ensuring to provide real life experiences.
+                                `;
+                    document.getElementById("text1").style.textAlign = "left";
+                }
+                document.getElementById("heading").innerHTML = heading;
+                document.getElementById(
+                    "text"
+                ).innerHTML = `${Text} <br /> ${Text1}`;
+                document.getElementById("text1").innerHTML = Text2;
+            }
         </script>
     </body>
 </html>
