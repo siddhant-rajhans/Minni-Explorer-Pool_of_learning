@@ -11,7 +11,6 @@ img {
     justify-content: space-between;
     align-items: center;
     display: flex;
-    height: 165px;
     /* Large padding which will shrink on scroll (using JS) */
     transition: padding 0.4s; /* Adds a transition effect when the padding is decreased */
     position: -webkit-sticky;
@@ -84,14 +83,13 @@ img {
 .smallmine {
     margin-bottom: 50px;
 }
-.logosmall {
-    width: 300px;
-}
+
 .smallheight {
     height: 124px !important;
 }
 .container-ham {
     margin-top: 62.5px;
+    margin-right: 20px;
     align-self: flex-start;
 }
 .bar1,
@@ -145,6 +143,27 @@ img {
 @media screen and (max-width: 600px) {
     .logo {
         width: 350px;
+    }
+}
+.logosmall {
+    width: 300px;
+}
+@media screen and (max-width: 500px) {
+    .logo {
+        width: 250px;
+    }
+    .container-ham {
+        margin-top: 37.5px !important;
+    }
+}
+@media screen and (max-width: 420px) {
+    .bar1,
+    .bar2,
+    .bar3 {
+        height: 4px;
+    }
+    .container-ham {
+        margin-top: 34.5px !important;
     }
 }
 /* ####################################### gallery ############################################ */
