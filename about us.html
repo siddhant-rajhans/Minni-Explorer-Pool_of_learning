@@ -35,7 +35,7 @@
                     <img src="/images/Minni-Explorer-Gif-icon.gif" />
                 </div>
                 <div id="navbar-right" class="align_items hide">
-                    <a  href="/index.html"
+                    <a href="/index.html"
                         ><i class="fa fa-fw fa-home"></i>Home</a
                     >
                     <a href="/Gallery.html"
@@ -69,7 +69,7 @@
             </p>
         </div>
         <div class="row card-container">
-            <div class="card col orange">
+            <div class="card col orange selected">
                 <div class="card-icon">
                     <i class="fas fa-user-friends"></i>
                 </div>
@@ -225,12 +225,18 @@
                     .classList.toggle("hide");
                 document.getElementById("navbar").classList.toggle("height");
             }
-            document.querySelectorAll(".card").forEach((element, index) => {
-                element.addEventListener("click", () => {
-                    changetext(index);
+            document.querySelectorAll(".card").forEach((Element, index) => {
+                Element.addEventListener("click", () => {
+                    changetext(index, index);
                 });
             });
-            function changetext(color) {
+            function changetext(color, i) {
+                document.querySelectorAll(".card").forEach((Element, index) => {
+                    Element.classList.remove("selected");
+                    if (i === index) {
+                        Element.classList.add("selected");
+                    }
+                });
                 let heading = "";
                 let Text = "";
                 let Text1 = "";
@@ -255,9 +261,8 @@
                         "We stand to maintain a culture for all kids a sense of belonging and safe feelings.";
                     Text1 = "";
                     Text2 = `➢	Value diversity and beliefs as every child is unique in his/her own perspectives, ideas, knowledge and culture and that proves to be a great strength to our social environment.<br />
-➢	Respecting the environment in which we  exist -: the people, the place, the culture and tradition.<br />
-➢	Based upon the basic values of society which gives an image to the child to build foundations for life. 
-.`;
+                             ➢	Respecting the environment in which we  exist -: the people, the place, the culture and tradition.<br />
+                             ➢	Based upon the basic values of society which gives an image to the child to build foundations for life. `;
                     document.getElementById("text1").style.textAlign = "left";
                 } else if (color == 1) {
                     heading = `OUR OBJECTIVES `;

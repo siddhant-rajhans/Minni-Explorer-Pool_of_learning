@@ -110,7 +110,8 @@
     background-image: url("../../images/g.png");
     background-size: contain;
 }
-.card:hover::before {
+.card:hover::before,
+.selected::before {
     height: 100% !important;
     top: -5%;
 }
@@ -138,11 +139,14 @@
     left: calc(50% - 50px);
     border-bottom: 5px solid black;
 }
-.card:hover .card-txt::after {
+.card:hover .card-txt::after,
+.selected .card-txt::after {
     transform: scalex(0.9);
 }
 .card:hover .card-txt,
-.card:hover .card-icon {
+.card:hover .card-icon,
+.selected .card-txt,
+.selected .card-icon {
     transform: translatey(-20px);
 }
 .card-change-text {
