@@ -21,7 +21,6 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
         <link rel="stylesheet" href="/assets/css/style.css" />
-        <script src="/assets/js/main.js"></script>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -34,25 +33,33 @@
             src="https://kit.fontawesome.com/8969165523.js"
             crossorigin="anonymous"
         ></script>
+        <script src="/assets/js/main.js"></script>
     </head>
 
     <body>
         <!-- Just an image -->
 
         <div id="navbar">
-            <div class="logo">
-                <img src="/images/Minni-Explorer-Gif-icon.gif" />
+            <div class="nav">
+                <div class="logo">
+                    <img src="/images/Minni-Explorer-Gif-icon.gif" />
+                </div>
+                <div id="navbar-right" class="align_items hide">
+                    <a class="active" href="#home"
+                        ><i class="fa fa-fw fa-home"></i>Home</a
+                    >
+                    <a href="/Gallery.html"
+                        ><i class="fa fa-fw fa-envelope"></i>Gallery</a
+                    >
+                    <a href="/about us.html"
+                        ><i class="fa fa-fw fa-search"></i>About</a
+                    >
+                </div>
             </div>
-            <div id="navbar-right" class="align_items">
-                <a class="active" href="#home"
-                    ><i class="fa fa-fw fa-home"></i>Home</a
-                >
-                <a href="/Gallery.html"
-                    ><i class="fa fa-fw fa-envelope"></i>Gallery</a
-                >
-                <a href="/about us.html"
-                    ><i class="fa fa-fw fa-search"></i>About</a
-                >
+            <div class="container-ham hide" id="ham" onclick="Hambar(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </div>
         </div>
 

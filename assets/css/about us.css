@@ -146,7 +146,13 @@
 .card:hover .card-icon {
     transform: translatey(-20px);
 }
-
+.card-change-text {
+    padding: 20px 0;
+    transform: translatex(calc(-70% + var(--x) / 10));
+}
+footer {
+    margin-top: 500px;
+}
 @media screen and (max-width: 1281px) {
     .card-container {
         width: 100%;

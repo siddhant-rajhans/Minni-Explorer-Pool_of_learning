@@ -66,6 +66,7 @@
                     <i class="fas fa-user-friends"></i>
                 </div>
                 <p class="card-txt">Founders Message</p>
+                >
             </div>
             <div class="card col blue">
                 <div class="card-icon">
@@ -80,21 +81,28 @@
                 <p class="card-txt">Culture and Values</p>
             </div>
         </div>
-        <div class="about-container">
-            <h2 class="about-heading">About us</h2>
+        <div class="about-container" id="card-text">
+            <div class="card-change-text" id="card-change-text">
+                <h2 class="about-heading">Welcome to ME</h2>
 
-            <p class="about-text">
-                An organisation with the vision of creating a new benchmark of
-                excellence in play education, with a mission to build a strong
-                foundation of your child .
-            </p>
-            <p class="about-text">
-                A partnership in discovery and exploration.
-            </p>
-            <p class="about-text">
-                Build around the concept of bounding tools of love, care and
-                growth.
-            </p>
+                <p class="about-text"></p>
+                <p class="about-text">
+                    Preschool - A POOL OF LEARNING
+                    <br />
+                    Daycare - a home away from home
+                </p>
+                <p class="about-text">
+                    Dear all We believe that a good preschool is one that blunts
+                    weaknesses and provides a stimulating environment for
+                    Social, emotional and intellectual development of a child
+                    and prepares them well with all requisite concepts and
+                    skills necessary for the next step of learning. ME is very
+                    unique and special in its own way of imparting early
+                    childhood education programs .I along with my team would be
+                    delighted to welcome you for a visit to the dynamic and
+                    energetic learning environment of our school.
+                </p>
+            </div>
         </div>
         <!-- Footer -->
         <footer class="bg-light text-center text-white">
@@ -166,5 +174,15 @@
             </div>
             <!-- Copyright -->
         </footer>
+        <script>
+            const position = document.getElementById("card-change-text");
+            window.onscroll = () => {
+                if (window.scrollY > 600 && window.scrollY < 850) {
+                    position.style.setProperty("--x", 700 + "%");
+                } else {
+                    position.style.setProperty("--x", window.scrollY + "%");
+                }
+            };
+        </script>
     </body>
 </html>

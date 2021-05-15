@@ -7,12 +7,12 @@ img {
 }
 /* Create a sticky/fixed navbar */
 #navbar {
-    overflow: hidden;
     background-color: white;
     justify-content: space-between;
     align-items: center;
     display: flex;
-    padding: 9px 1px; /* Large padding which will shrink on scroll (using JS) */
+    height: 165px;
+    /* Large padding which will shrink on scroll (using JS) */
     transition: padding 0.4s; /* Adds a transition effect when the padding is decreased */
     position: -webkit-sticky;
     position: sticky; /* Sticky/fixed navbar */
@@ -33,6 +33,12 @@ img {
 #navbar-right a {
     margin-right: 20px;
 }
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
 /* Style the logo */
 #navbar .logo {
     display: inline-block;
@@ -40,6 +46,8 @@ img {
 }
 .align_items {
     align-items: center;
+    transition: all 2s;
+    max-height: 1000px;
 }
 /* Links on mouse-over */
 #navbar a:hover {
@@ -55,24 +63,6 @@ img {
 /* Display some links to the right */
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
-@media screen and (max-width: 877px) {
-    #navbar {
-        flex-direction: column;
-    }
-    #navbar a {
-        display: block;
-        text-align: center;
-    }
-}
-@media screen and (max-width: 580px) {
-    #navbar {
-        padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
-    }
-}
-
-
-
-
 
 /* Container holding the image and the text */
 .img-cont {
@@ -90,6 +80,72 @@ img {
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+}
+.smallmine {
+    margin-bottom: 50px;
+}
+.logosmall {
+    width: 300px;
+}
+.smallheight {
+    height: 124px !important;
+}
+.container-ham {
+    margin-top: 62.5px;
+    align-self: flex-start;
+}
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.height {
+    height: 100% !important;
+}
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+.hide {
+    opacity: 0;
+    position: absolute;
+    transition: none;
+    pointer-events: none;
+}
+.container-ham.hide {
+    display: none;
+}
+@media screen and (max-width: 877px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #navbar a {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+    #navbar-right {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 350px;
+    }
 }
 /* ####################################### gallery ############################################ */
 .grid-container {
