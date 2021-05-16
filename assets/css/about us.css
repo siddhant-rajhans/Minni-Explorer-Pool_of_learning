@@ -165,7 +165,7 @@ br {
     margin-top: 10px;
 }
 .curriculum-container {
-    background-color: rgb(3, 161, 189);
+    background-color: rgb(3, 103, 121);
     color: white;
     margin: 0 50px;
     padding: 20px 50px;
@@ -173,10 +173,10 @@ br {
     position: relative;
 }
 .border-anim {
-    background-image: linear-gradient(90deg, white 50%, transparent 50%),
-        linear-gradient(90deg, white 50%, transparent 50%),
-        linear-gradient(0deg, white 50%, transparent 50%),
-        linear-gradient(0deg, white 50%, transparent 50%);
+    background-image: linear-gradient(90deg, #3dee2e 50%, transparent 50%),
+        linear-gradient(90deg, #3dee2e 50%, transparent 50%),
+        linear-gradient(0deg, #3dee2e 50%, transparent 50%),
+        linear-gradient(0deg, #3dee2e 50%, transparent 50%);
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
     background-size: 30px 4px, 30px 4px, 4px 30px, 4px 30px;
     padding: 20px 20px;
@@ -191,7 +191,7 @@ br {
 .heading-c-text {
     margin: 0 auto;
     font-size: 40px;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Roboto Slab", serif;
     letter-spacing: 4px;
     position: relative;
     background-color: transparent;
@@ -211,7 +211,6 @@ br {
 .text-c {
     font-size: 20px;
     padding-left: 20px;
-    /* color: rgb(68, 0, 37); */
 }
 .ul-text {
     text-align: center;
@@ -226,10 +225,32 @@ br {
     width: 70%;
     margin: 0 auto;
     transition: all 1s;
+    list-style: none;
+    position: relative;
 }
-.anim {
-    color: black;
-    transform: translateX(30px);
+.li::before {
+    position: absolute;
+    left: -20px;
+    top: -10%;
+    transform: scale(1.1);
+    content: "\00BB";
+}
+.li:nth-child(even) {
+    color: greenyellow;
+    transform: translatex(50px);
+}
+.margin {
+    padding: 0 10%;
+}
+.height-c {
+    text-align: center;
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2367d05e' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2367d05e' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 @keyframes border-dance {
     0% {
