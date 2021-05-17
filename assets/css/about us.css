@@ -528,6 +528,9 @@ br {
     }
 }
 @media screen and (max-width: 552px) {
+    .about-text {
+        font-size: 13px;
+    }
     .card-txt {
         font-size: 10px;
     }
@@ -592,6 +595,9 @@ br {
     .card {
         padding: 0;
     }
+    .about-text {
+        font-size: 11px;
+    }
     #heading,
     .about-heading {
         font-size: 14px;
@@ -605,5 +611,13 @@ br {
     .second-bc {
         width: 150px;
         transform: translate(0px, 60px);
+    }
+}
+@media screen and (max-width: 362px) {
+    .green {
+        margin-right: 0 !important;
+    }
+    .orange {
+        margin-left: 0 !important;
     }
 }
