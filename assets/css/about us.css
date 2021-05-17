@@ -210,8 +210,9 @@ br {
 }
 .text-c {
     font-size: 20px;
-    padding-left: 20px;
+    padding: 0 10px;
 }
+
 .ul-text {
     text-align: center;
     margin: 50px auto;
@@ -224,7 +225,6 @@ br {
     font-size: 22px;
     width: 70%;
     margin: 0 auto;
-    transition: all 1s;
     list-style: none;
     position: relative;
 }
@@ -252,6 +252,103 @@ br {
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2367d05e' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
+.beyond-curr-container {
+    display: flex;
+    margin: 50px 0px;
+    padding: 10px 0;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.beyond-curr-container::before {
+    background: linear-gradient(
+            217deg,
+            rgba(229, 255, 0, 1),
+            rgba(255, 0, 0, 0) 70.71%
+        ),
+        linear-gradient(127deg, rgba(21, 255, 0, 1), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0) 70.71%);
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+}
+.text-bc {
+    text-align: center;
+    position: relative;
+    background-attachment: fixed;
+    z-index: 1;
+    width: 100%;
+    color: black !important;
+    padding: 20px;
+    margin: 20px 0;
+}
+.text-bc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    filter: blur(1px);
+    z-index: -2;
+    background-attachment: fixed;
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.beyond-curr-container::after {
+    content: "";
+    width: 4px;
+    background-color: rgb(21, 0, 139);
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    position: absolute;
+}
+.list-container {
+    width: 910px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+.second-bc {
+    transform: translatey(60px);
+    text-align: left;
+}
+.li-bc {
+    margin-bottom: 60px;
+    position: relative;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+.li-bc::before {
+    width: 250px;
+    height: 4px;
+    background-color: rgb(21, 0, 139);
+    bottom: -10px;
+    left: -11px;
+    position: absolute;
+    content: "";
+}
+.first-bc .li-bc {
+    transform: translatex(80px);
+    /* margin-r: -20px; */
+}
+.first-bc .li-bc::before {
+    width: 250px;
+    height: 4px;
+    left: 64px;
+    position: absolute;
+    content: "";
+}
 @keyframes border-dance {
     0% {
         background-position: left top, right bottom, left bottom, right top;
@@ -261,7 +358,11 @@ br {
             right top 30px;
     }
 }
-
+@media screen and (max-width: 1390px) {
+    .ul-text {
+        width: 90%;
+    }
+}
 @media screen and (max-width: 1281px) {
     .card-container {
         width: 100%;
@@ -285,6 +386,34 @@ br {
     .card-txt::after {
         border-bottom-width: 3px;
     }
+    .ul-text {
+        margin-left: 50px;
+        margin-right: 0;
+        align-self: center;
+    }
+    .text-c {
+        font-size: 18px;
+    }
+    .large-c {
+        font-size: 17px;
+    }
+    .li {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 910px) {
+    .list-container {
+        width: 700px;
+    }
+    .li-bc {
+        font-size: 15px;
+    }
+    .li-bc::before {
+        left: -10px;
+    }
+    .first-bc .li-bc::before {
+        left: -28px;
+    }
 }
 @media screen and (max-width: 878px) {
     .card {
@@ -297,6 +426,31 @@ br {
     #text1 {
         margin: 0 5vh;
     }
+    .li-bc::before {
+        width: 200px !important;
+        left: -10px;
+    }
+    .first-bc .li-bc::before {
+        left: 20px;
+    }
+    .ul-text {
+        margin-left: 20px;
+        align-self: center;
+    }
+    .text-c {
+        font-size: 15px;
+    }
+    .large-c {
+        font-size: 12px;
+    }
+    .li {
+        font-size: 13px;
+        margin: 0;
+        width: 90%;
+    }
+    .li:nth-child(even) {
+        transform: translatex(20px);
+    }
 }
 @media screen and (max-width: 818px) {
     .card-txt {
@@ -308,7 +462,44 @@ br {
         margin: 0 10px;
     }
 }
+@media screen and (max-width: 700px) {
+    .list-container {
+        width: 500px;
+    }
+    .first-bc {
+        transform: translateX(-76px);
+    }
+    .second-bc {
+        transform: translate(16px, 60px);
+    }
+    .li-bc {
+        font-size: 12px;
+    }
+    .first-bc,
+    .second-bc {
+        font-size: 10px;
+    }
+}
 @media screen and (max-width: 688px) {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        transform: scale(0.8);
+    }
+    .text-c {
+        font-size: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    .heading-c-text {
+        font-size: 30px;
+    }
+    .large-c {
+        font-size: 10px;
+    }
+    .li {
+        font-size: 9px;
+    }
     .card-txt {
         font-size: 15px;
         padding-bottom: 5px;
@@ -331,10 +522,21 @@ br {
     #text1 {
         margin: 0 0vh;
     }
+    .li::before {
+        left: -11px;
+        top: -3%;
+    }
 }
 @media screen and (max-width: 552px) {
     .card-txt {
         font-size: 10px;
+    }
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        transform: scale(0.5);
+    }
+    .heading-c-text {
+        font-size: 20px;
     }
     .card-icon {
         font-size: 20px;
@@ -356,6 +558,30 @@ br {
     #text1 {
         font-size: 12px;
     }
+    .heading-c-text {
+        font-size: 20px;
+    }
+    .curriculum-container {
+        margin: 0;
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .list-container {
+        width: 300px;
+    }
+    .curriculum-container {
+        padding: 20px 10px;
+    }
+    .li-bc::before {
+        width: 150px !important;
+    }
+    .first-bc {
+        transform: translateX(-99px);
+    }
+    .second-bc {
+        transform: translate(32px, 60px);
+    }
 }
 @media screen and (max-width: 422px) {
     .card-txt {
@@ -375,5 +601,9 @@ br {
     }
     #text1 {
         font-size: 9px;
+    }
+    .second-bc {
+        width: 150px;
+        transform: translate(0px, 60px);
     }
 }
