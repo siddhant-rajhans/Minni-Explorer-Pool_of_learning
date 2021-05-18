@@ -28,6 +28,7 @@
     top: 0%;
     left: 0;
     width: 200%;
+    -webkit-animation: bgtranslate 5s infinite ease-in;
     animation: bgtranslate 5s infinite ease-in;
     height: 100%;
     z-index: -1;
@@ -38,6 +39,17 @@
 .about-heading {
     padding: 10px 0;
     font-size: 40px;
+}
+@-webkit-keyframes bgtranslate {
+    0% {
+        transform: translatey(0);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 @keyframes bgtranslate {
     0% {
@@ -181,6 +193,7 @@ br {
     background-size: 30px 4px, 30px 4px, 4px 30px, 4px 30px;
     padding: 20px 20px;
     background-position: left top, right bottom, left bottom, right top;
+    -webkit-animation: border-dance 0.2s infinite linear;
     animation: border-dance 0.2s infinite linear;
 }
 .heading-c {
@@ -195,6 +208,8 @@ br {
     letter-spacing: 4px;
     position: relative;
     background-color: transparent;
+    width: -webkit-min-content;
+    width: -moz-min-content;
     width: min-content;
     z-index: 1;
 }
@@ -217,6 +232,8 @@ br {
     text-align: center;
     margin: 50px auto;
     font-size: 24px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     padding-bottom: 10px;
     border-bottom: 2px pink solid;
@@ -263,13 +280,7 @@ br {
     position: relative;
 }
 .beyond-curr-container::before {
-    background: linear-gradient(
-            217deg,
-            rgba(229, 255, 0, 1),
-            rgba(255, 0, 0, 0) 70.71%
-        ),
-        linear-gradient(127deg, rgba(21, 255, 0, 1), rgba(0, 255, 0, 0) 70.71%),
-        linear-gradient(336deg, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0) 70.71%);
+    background: rgba(130, 197, 29, 0.2);
     content: "";
     width: 100%;
     height: 100%;
@@ -281,28 +292,43 @@ br {
     position: relative;
     background-attachment: fixed;
     z-index: 1;
-    width: 100%;
-    color: black !important;
+    width: 80%;
+    color: white !important;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 .text-bc::before {
     content: "";
     position: absolute;
     top: 0;
-    filter: blur(1px);
     z-index: -2;
     background-attachment: fixed;
     left: 0;
     right: 0;
-
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 10px;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.text-bc::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -3;
+    background-attachment: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    bottom: 0;
+    background: rgb(230, 243, 210);
 }
 .beyond-curr-container::after {
     content: "";
     width: 4px;
-    background-color: rgb(21, 0, 139);
+    background-color: rgb(70, 72, 201);
     top: 0;
     z-index: -1;
     height: 100%;
@@ -325,22 +351,36 @@ br {
     margin-bottom: 60px;
     position: relative;
     font-size: 20px;
-    color: black;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 20%, rgb(70, 72, 201) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
     text-align: center;
 }
 .li-bc::before {
     width: 250px;
     height: 4px;
-    background-color: rgb(21, 0, 139);
+    background-color: rgb(70, 72, 201);
     bottom: -10px;
     left: -11px;
     position: absolute;
     content: "";
 }
+.li-bc::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    left: 58px;
+    bottom: -15px;
+    height: 13px;
+    background: rgb(70, 72, 201);
+    border-radius: 60px;
+}
+.second-bc .li-bc::after {
+    left: 230px;
+}
 .first-bc .li-bc {
     transform: translatex(80px);
-    /* margin-r: -20px; */
 }
 .first-bc .li-bc::before {
     width: 250px;
@@ -348,6 +388,15 @@ br {
     left: 64px;
     position: absolute;
     content: "";
+}
+@-webkit-keyframes border-dance {
+    0% {
+        background-position: left top, right bottom, left bottom, right top;
+    }
+    100% {
+        background-position: left 30px top, right 30px bottom, left bottom 30px,
+            right top 30px;
+    }
 }
 @keyframes border-dance {
     0% {
@@ -432,6 +481,12 @@ br {
     }
     .first-bc .li-bc::before {
         left: 20px;
+    }
+    .li-bc::after {
+        left: 17px;
+    }
+    .second-bc .li-bc::after {
+        left: 187px;
     }
     .ul-text {
         margin-left: 20px;
@@ -584,6 +639,13 @@ br {
     }
     .second-bc {
         transform: translate(32px, 60px);
+    }
+    .second-bc .li-bc::after {
+        left: 139px;
+    }
+    .text-bc {
+        width: 100%;
+        border-radius: 0;
     }
 }
 @media screen and (max-width: 422px) {
